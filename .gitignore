@@ -4,3 +4,4 @@ __pycache__/
 *.key
 cosign.key
 sbom.json
+results/*.json
