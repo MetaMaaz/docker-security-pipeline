@@ -52,6 +52,10 @@ exit-code: 1
 
 The first run failed anyway. Two fixable base-image CVEs — `CVE-2025-13836` and `CVE-2026-45447` — are patched in Debian but haven't landed in the distroless base yet, and re-pulling just gave me the same digest. I didn't want to either ignore a red build or weaken the gate, so I added a `.trivyignore` listing exactly those two IDs, dated, with a note to re-pin the base and delete the lines once distroless rebuilds. Risk accepted, on paper, with an expiry plan.
 
+To prove the gate isn't just decoration, I pushed a throwaway branch that pointed the build at `Dockerfile.v1-naive` and let it run. It failed exactly as it should — Trivy counted over a thousand OS-level CVEs and the step exited non-zero, blocking the merge:
+
+![CI gate failing on the naive image](docs/screenshots/ci-fail.png)
+
 ## Supply chain
 
 `results/sbom.json` is the SPDX bill of materials from Syft — 41 components. You can see from the SBOM alone that there's no shell, no apt, no perl, which means my "small attack surface" claim isn't something you have to take on faith.
