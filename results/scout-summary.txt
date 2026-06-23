@@ -1,0 +1,20 @@
+
+
+## Overview
+
+                   │                      Analyzed Image                      
+───────────────────┼──────────────────────────────────────────────────────────
+ Target            │  myapp:v4-distroless                                     
+   digest          │  d9052d847a0c                                            
+   platform        │ linux/arm64                                              
+   provenance      │ https://github.com/MetaMaaz/docker-security-pipeline.git 
+                   │  https://github.com/MetaMaaz/docker-security-pipeline/blob/98210898dc499351eb76c7016ac7f983ecd31cba                
+   vulnerabilities │    0C     0H     0M     0L                               
+   size            │ 21 MB                                                    
+   packages        │ 62                                                       
+
+
+## Packages and Vulnerabilities
+
+  No vulnerable packages detected
+
