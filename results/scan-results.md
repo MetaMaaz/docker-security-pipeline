@@ -6,3 +6,5 @@
 | v2-slim | python:3.9-slim | 39 | 5 | 34 | 226MB |
 | v3-nonroot | python:3.12-slim | 11 | 2 | 9 | 210MB |
 | v4-distroless | distroless/python3 | 28 | 2 | 26 | 99.8MB |
+
+_v4-distroless base pinned by digest (sha256:2fdb0540...) in Phase 3d — contents unchanged, scan identical._
