@@ -1,0 +1,6 @@
+# Base-image CVEs in gcr.io/distroless/python3-debian12.
+# Fixed in Debian upstream but not yet shipped in the distroless base build.
+# Action: re-pin the base digest and delete these lines once distroless rebuilds.
+# Reviewed 2026-06-23.
+CVE-2025-13836
+CVE-2026-45447
