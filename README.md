@@ -4,7 +4,7 @@
 > that **fails the build on HIGH/CRITICAL vulnerabilities** — Trivy, SBOM (Syft),
 > Docker Scout, and digest-pinned base images.
 
-<img width="1280" height="640" alt="docker-security-pipeline: CI scan failing on a vulnerable image" src="https://github.com/user-attachments/assets/80ab8a2b-65a3-46aa-be7f-f6a30d3c0474" />
+![CI scan failing the build on a vulnerable image](docs/screenshots/ci-fail.png)
 
 **What this proves:** I can shift security left — catching vulnerable container
 images in CI before they ever reach a registry, with a documented, auditable
