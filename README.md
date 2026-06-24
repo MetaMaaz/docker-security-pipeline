@@ -1,4 +1,16 @@
-# Docker Image Hardening Pipeline
+# docker-security-pipeline
+
+> Hardened, multi-stage Docker build for a Flask app with a CI security gate
+> that **fails the build on HIGH/CRITICAL vulnerabilities** — Trivy, SBOM (Syft),
+> Docker Scout, and digest-pinned base images.
+
+<img width="1280" height="640" alt="docker-security-pipeline: CI scan failing on a vulnerable image" src="https://github.com/user-attachments/assets/80ab8a2b-65a3-46aa-be7f-f6a30d3c0474" />
+
+**What this proves:** I can shift security left — catching vulnerable container
+images in CI before they ever reach a registry, with a documented, auditable
+exception process.
+
+## Docker Image Hardening Pipeline
 
 I took a naive Python/Flask container — 1.6 GB, over 1,200 critical and high CVEs — and worked it down to a 100 MB distroless image with 28. Every version along the way got scanned, gated in CI, and given an SBOM. This repo is the trail of how I got there and what I learned arguing with the scanners.
 
