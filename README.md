@@ -96,9 +96,10 @@ LICENSE
 
 ## Run it
 
-**Pull the published image** (no build needed):
+**Pull the published image:**
 
 ```bash
+docker pull ghcr.io/metamaaz/myapp:v4-distroless
 docker run --rm -p 5000:5000 ghcr.io/metamaaz/myapp:v4-distroless
 ```
 
