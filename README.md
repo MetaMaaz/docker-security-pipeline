@@ -94,10 +94,33 @@ results/scout-summary.txt
 LICENSE
 ```
 
-Build any version from the repo root:
+## Run it
+
+**Pull the published image** (no build needed):
+
+```bash
+docker run --rm -p 5000:5000 ghcr.io/metamaaz/myapp:v4-distroless
+```
+
+**Or build it yourself** from the repo root:
 
 ```bash
 docker build -f dockerfiles/Dockerfile.v4-distroless -t myapp:v4-distroless .
+docker run --rm -p 5000:5000 myapp:v4-distroless
+```
+
+Then hit the app:
+
+```bash
+curl localhost:5000          # Hello from a hardened container!
+curl localhost:5000/health   # {"status":"ok"}
+```
+
+**Reproduce the scan numbers** for any version:
+
+```bash
+docker build -f dockerfiles/Dockerfile.v1-naive -t myapp:v1-naive .
+trivy image --severity CRITICAL,HIGH --ignore-unfixed myapp:v1-naive
 ```
 
 ## What I'd tell someone starting this
