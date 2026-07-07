@@ -72,7 +72,7 @@ To prove the gate isn't just decoration, I pushed a throwaway branch that pointe
 
 `results/sbom.json` is the SPDX bill of materials from Syft — 41 components. You can see from the SBOM alone that there's no shell, no apt, no perl, which means my "small attack surface" claim isn't something you have to take on faith.
 
-The scanner disagreement was my favorite find. On the exact same image, Docker Scout said `0C/0H/0M/1L` and Trivy said 28. Different databases: Scout doesn't bother surfacing the unfixable base-OS DoS bugs. But the one LOW that Scout caught and Trivy's gate filtered out by design was a real Flask 3.0.0 CVE (`CVE-2026-27205`). So I bumped Flask to 3.1.3 and re-scanned, and Scout went clean. Neither scanner had the full picture on its own — that's the takeaway I'll repeat in an interview.
+The scanner disagreement was my favorite find. On the exact same image, Docker Scout said `0C/0H/0M/1L` and Trivy said 28. Different databases: Scout doesn't bother surfacing the unfixable base-OS DoS bugs. But the one LOW that Scout caught and Trivy's gate filtered out by design was a real Flask 3.0.0 CVE (`CVE-2026-27205`). So I bumped Flask to 3.1.3 and re-scanned, and Scout went clean. Neither scanner had the full picture on its own.
 
 The final image is published to `ghcr.io/metamaaz/myapp:v4-distroless` (and `:latest`), public, MIT.
 
